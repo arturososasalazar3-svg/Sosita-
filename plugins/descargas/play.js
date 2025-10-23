@@ -202,16 +202,15 @@ const handler = async (m, { conn, text, command }) => {
         contextInfo: {
           isForwarded: true,
           forwardedNewsletterMessageInfo: {
-            newsletterJid: channelRD.id,
-            newsletterName: channelRD.name,
-            serverMessageId: -1
-          }
-        }
-      },
-      { quoted: fkontak2 }
-    );
+            newsletterJid: '120363414007802886@newsletter', 
 
-    if (["mp3", "play"].includes(command)) {
+newsletterName: 'Sasuke 🌀🔥'
+}, 
+serverMessageId: -1 
+},  quoted: fkontak2 
+}); 
+
+if (["mp3", "play"].includes(command)) {
       await m.react("🎧");
       const dl = await savetube.download(url, "audio");
       if (!dl.status) return m.reply(`❌ Error: ${dl.error}`);
